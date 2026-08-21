@@ -81,7 +81,8 @@
         $oldArea = old('area', 'inside');
     @endphp
 
-    <form id="orderForm" method="POST" action="{{ route('order.store') }}" novalidate>
+    <form id="orderForm" method="POST" action="{{ Route::has('order.store') ? route('order.store') : url('/order') }}"
+        novalidate>
         @csrf
 
         {{-- Products --}}
